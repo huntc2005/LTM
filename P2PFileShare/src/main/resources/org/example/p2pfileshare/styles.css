@@ -1,0 +1,156 @@
+/* ======================= */
+/*          GLOBAL          */
+/* ======================= */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-base: #EBE1D1;       /* nền tổng thể sáng */
+    -fx-accent: #3498db;     /* màu chủ đạo */
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* ======================= */
+/*          TABPANE         */
+/* ======================= */
+.tab-pane .tab-header-area {
+    visibility: hidden;  /* ẩn header */
+    min-height: 0;
+    max-height: 0;
+    pref-height: 0;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.tab {
+    -fx-background-color: transparent;
+    -fx-padding: 10 20;
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: transparent;
+}
+
+.tab:selected {
+    -fx-border-color: -fx-accent;
+}
+
+.tab-label {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: -fx-accent;
+}
+
+/* ======================= */
+/*          TABLEVIEW       */
+/* ======================= */
+.table-view {
+    -fx-background-color: #0D4715;  /* nền tổng thể TableView */
+    -fx-table-cell-border-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 1);
+}
+
+/* Header cột */
+.table-view .column-header-background {
+    -fx-background-color: #0D4715;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #EBE1D1;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+/* Dòng dữ liệu */
+.table-view .table-row-cell {
+    -fx-background-color: #0D4715;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #12601F;
+}
+
+.table-view .table-row-cell .text {
+    -fx-fill: #EBE1D1;
+}
+
+/* Chọn dòng */
+.table-view .table-row-cell:selected {
+    -fx-background-color: #27ae60;
+}
+
+.table-view .table-row-cell:selected .text {
+    -fx-fill: #EBE1D1;
+}
+
+/* ======================= */
+/*          BUTTON          */
+/* ======================= */
+.button {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 8 16;
+}
+
+/* === NÚT CHUNG CHO TẤT CẢ === */
+.button {
+    -fx-background-color: #0D4715; /* màu nền chính */
+    -fx-text-fill: #EBE1D1;        /* màu chữ */
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;      /* bo góc */
+    -fx-cursor: hand;
+    -fx-padding: 8 16;             /* padding */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3,0,0,1);
+}
+
+.button:hover {
+    -fx-background-color: #196a2a; /* hover sáng hơn */
+}
+
+.button:pressed {
+    -fx-background-color: #0b3310; /* pressed tối hơn */
+}
+
+/* Loại bỏ sự khác biệt cho secondary và danger */
+.button.secondary,
+.button.danger {
+    -fx-background-color: #0D4715;
+    -fx-text-fill: #EBE1D1;
+}
+
+.button.secondary:hover,
+.button.danger:hover {
+    -fx-background-color: #196a2a;
+}
+
+.button.secondary:pressed,
+.button.danger:pressed {
+    -fx-background-color: #0b3310;
+}
+
+
+/* ======================= */
+/*          TEXTFIELD       */
+/* ======================= */
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 6;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 6;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: -fx-accent;
+}

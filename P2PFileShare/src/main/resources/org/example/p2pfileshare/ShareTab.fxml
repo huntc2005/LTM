@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.p2pfileshare.controller.ShareTabController"
+            style="-fx-background-color: #EBE1D1;"> <!-- nền sáng -->
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <!-- Top: Chọn thư mục + các nút hành động -->
+    <top>
+        <VBox spacing="12" style="-fx-background-color: #0D4715; -fx-padding: 15; -fx-background-radius: 10;">
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="Thư mục chia sẻ:" style="-fx-text-fill: #EBE1D1; -fx-font-size: 14px;"/>
+                <TextField fx:id="shareFolderField" prefWidth="300" editable="false" style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-border-radius: 6;"/>
+                <Button text="Chọn..." onAction="#onChooseFolder" style="-fx-background-color: #27ae60; -fx-text-fill: #EBE1D1; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+                <Button text="Quét lại" onAction="#onRefreshSharedFiles" style="-fx-background-color: #2980b9; -fx-text-fill: #EBE1D1; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+            </HBox>
+            <HBox spacing="12">
+                <Button text="Thêm tài liệu..." onAction="#onAddSharedFile" style="-fx-background-color: #27ae60; -fx-text-fill: #EBE1D1; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+                <Button text="Xóa tài liệu" onAction="#onRemoveSharedFile" style="-fx-background-color: #c0392b; -fx-text-fill: #EBE1D1; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center: Table các file -->
+    <center>
+        <TableView fx:id="sharedFileTable" style="-fx-background-color: #ffffff; -fx-border-radius: 8; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 1);">
+            <columns>
+                <TableColumn fx:id="colSharedName" text="Tên file" prefWidth="200"/>
+                <TableColumn fx:id="colSharedType" text="Loại" prefWidth="80"/>
+                <TableColumn fx:id="colSharedSize" text="Kích thước" prefWidth="100"/>
+                <TableColumn fx:id="colSharedSubject" text="Môn học" prefWidth="120"/>
+                <TableColumn fx:id="colSharedTags" text="Tag" prefWidth="150"/>
+                <TableColumn fx:id="colSharedVisibility" text="Chia sẻ" prefWidth="80"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <placeholder>
+                <Label text="Chưa có file chia sẻ nào." style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;"/>
+            </placeholder>
+        </TableView>
+    </center>
+
+</BorderPane>
